@@ -1,22 +1,21 @@
 import React from 'react';
+import styled from 'styled-components';
+import { Logo } from '../../../components/logo/Logo';
+import { Menu } from '../../../components/menu/Menu';
 
 export const Header = () => {
   return (
-    <header>
-      <a href="#">Vahid Navazan</a>
-      <nav>
-        <ul>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Projects</a>
-          </li>
-          <li>
-            <a href="#">Contacts</a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+    <StyledHeader>
+      <Logo />
+      <Menu />
+    </StyledHeader>
   );
 };
+
+const StyledHeader = styled.header`
+  height: 56px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 120px;
+`
