@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import photo from '../../../images/foto.png'
+import photo from '../../../images/foto.png';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
 
 export const Main =() => {
@@ -27,6 +27,10 @@ type MainBtnPropsType = {
 
 const StyledMain = styled.div`
   min-height: 100vh;
+  max-width: 1200px;
+  width: 100%;
+  overflow: hidden;
+  padding: 0 120px;
 `
 
 const TextBlock = styled.div`
@@ -78,19 +82,26 @@ const MainBtn = styled.button<MainBtnPropsType>`
 
   ${props => props.primary && css<MainBtnPropsType>`
     background-color: #fdc435;
+
+    &:hover {
+      background-color: #fe3b3b;
+      font-size: 20px;
+    }
   `}
     
   ${props => props.secondary && css<MainBtnPropsType>`
     background-color: #ffffff;
     border: 2px solid rgb(37, 40, 43);
+
+    &:hover {
+      border: 3px solid #fe3b3b;
+      font-size: 20px;
+    }
   `} 
 `
+
 const Photo = styled.img`
-  width: 720px;
-  height: 629px;
-  object-fit: cover;
   position: absolute;
   right: 0;
   top: 0;
-  display: block;
 `
