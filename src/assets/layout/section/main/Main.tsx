@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import photo from '../../../images/foto.png';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
 
-export const Main =() => {
+export const Main = () => {
   return (
     <StyledMain>
       <FlexWrapper align={"center"}>
