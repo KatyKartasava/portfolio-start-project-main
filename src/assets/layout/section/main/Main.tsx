@@ -1,7 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import photo from '../../../images/foto.png';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
+import { Button } from '../../../../components/Button';
 
 export const Main = () => {
   return (
@@ -11,19 +12,14 @@ export const Main = () => {
           <MainTitle>Software Developer</MainTitle>
           <Name>Hello,  my name is Vahid Navazan</Name>
           <Description>Short text with details about you, what you do or your professional career. You can add more information on the about page.</Description>
-          <MainBtn primary>Projects</MainBtn>
-          <MainBtn secondary>LinkedIn</MainBtn>
+          <Button primary>Projects</Button>
+          <Button secondary>LinkedIn</Button>
         </TextBlock>
         <Photo src={photo} alt='Foto Vahid Navazan'/>
       </FlexWrapper>
     </StyledMain>
   );
 };
-
-type MainBtnPropsType = {
-  primary?: boolean
-  secondary?: boolean
-}
 
 const StyledMain = styled.div`
   min-height: 100vh;
@@ -37,6 +33,7 @@ const TextBlock = styled.div`
   width: 508px;
   padding-top: 55px;
 `
+
 const MainTitle =styled.h1`
   color: #fdc435;
   font-family: Nunito;
@@ -67,37 +64,6 @@ const Description = styled.p`
   letter-spacing: 0%;
   text-align: left;
   padding-right: 22px;
-`
-const MainBtn = styled.button<MainBtnPropsType>`
-  padding: 8px 24px;
-  border-radius: 8px;
-  color: #25282b;
-  font-family: Roboto;
-  font-size: 18px;
-  font-weight: 500;
-  line-height: 150%;
-  margin-right: 12px;
-  border: none;
-  cursor: pointer;
-
-  ${props => props.primary && css<MainBtnPropsType>`
-    background-color: #fdc435;
-
-    &:hover {
-      background-color: #fe3b3b;
-      font-size: 20px;
-    }
-  `}
-    
-  ${props => props.secondary && css<MainBtnPropsType>`
-    background-color: #ffffff;
-    border: 2px solid rgb(37, 40, 43);
-
-    &:hover {
-      border: 3px solid #fe3b3b;
-      font-size: 20px;
-    }
-  `} 
 `
 
 const Photo = styled.img`

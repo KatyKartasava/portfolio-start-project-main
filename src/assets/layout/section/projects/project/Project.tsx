@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Button } from "../../../../../components/Button";
 
 type ProjectPropsType = {
   title: string
@@ -13,7 +14,7 @@ export const Project = (props: ProjectPropsType) => {
       <ProjectText>
         <ProjectTitle>{props.title}</ProjectTitle>
         <ProjectDescription>{props.description}</ProjectDescription>
-        <ProjectLink href={"#"}>View Project</ProjectLink>
+        <Button secondary as={"a"} href={"#"}>View Project</Button>
       </ProjectText>
       <ProjectImage src={props.src}></ProjectImage>
     </StyledProject>
@@ -54,6 +55,14 @@ const ProjectText = styled.div`
   border-top-left-radius: 24px;
   border-bottom-left-radius: 24px;
   box-shadow: 0px 6px 64px 0px rgba(112, 144, 176, 0.1);
+
+  a {
+    box-sizing: border-box;
+    border: 1px solid #25282b;
+    border-radius: 24px;
+    text-decoration: none;
+    padding: 8px 24px;
+  }
 `
 
 const ProjectTitle = styled.h3`
@@ -72,14 +81,5 @@ const ProjectDescription = styled.p`
   font-weight: 400;
   line-height: 150%;
   letter-spacing: 0%;
-`
-
-const ProjectLink = styled.a`
-  box-sizing: border-box;
-  border: 1px solid #25282b;
-  border-radius: 24px;
-  text-decoration: none;
-  padding: 8px 24px;
-
 `
 
