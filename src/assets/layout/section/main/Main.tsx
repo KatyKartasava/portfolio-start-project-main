@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import photo from '../../../images/foto.png';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
 import { Button } from '../../../../components/Button';
+import { theme } from '../../../../styles/Theme';
 
 export const Main = () => {
   return (
@@ -35,33 +36,25 @@ const TextBlock = styled.div`
 `
 
 const MainTitle =styled.h1`
-  color: #fdc435;
+  color: ${theme.colors.accent};
   font-family: Nunito;
   font-size: 20px;
-  font-weight: 700;
   line-height: 27px;
-  letter-spacing: 0%;
   text-align: left;
   text-transform: uppercase;
 `
 
 const Name = styled.h2`
-  color: #333333;
+  color: ${theme.colors.fontH};
   font-family: Roboto;
   font-size: 64px;
-  font-weight: 700;
   line-height: 120%;
-  letter-spacing: 0%;
   text-align: left;
 `
 
 const Description = styled.p`
-  color: #828282;
-  font-family: Nunito;
   font-size: 24px;
-  font-weight: 400;
   line-height: 36px;
-  letter-spacing: 0%;
   text-align: left;
   padding-right: 22px;
 `

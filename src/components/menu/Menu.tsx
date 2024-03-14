@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { theme } from '../../styles/Theme';
 
 export const Menu = (props: {menuItems: Array<string>}) => {
   return (
@@ -16,27 +17,23 @@ export const Menu = (props: {menuItems: Array<string>}) => {
 };
 
 const StyledMenu = styled.nav`
-  color: #25282b;
+  color: ${theme.colors.fontP};
   font-family: Raleway;
   font-size: 18px;
   font-weight: 500;
   line-height: 28px;
-  letter-spacing: 0px;
   text-align: left;
 
   ul {
     display: flex;
     gap: 48px;
-    list-style: none;
-    margin: 0;
 
     li {
       padding: 14px 0;
 
       a {
-      text-decoration: none;
-      color: #25282b;
-    }
+      color: inherit;
+      }
     }
   }
 `

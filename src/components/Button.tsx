@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { theme } from "../styles/Theme";
 
 type ButtonPropsType = {
   primary?: boolean
@@ -18,7 +19,7 @@ export const Button = styled.button<ButtonPropsType>`
   cursor: pointer;
 
   ${props => props.primary && css<ButtonPropsType>`
-    background-color: #fdc435;
+    background-color: ${theme.colors.accent};
 
     &:hover {
       background-color: #7cfe3b;
@@ -27,8 +28,8 @@ export const Button = styled.button<ButtonPropsType>`
   `}
     
   ${props => props.secondary && css<ButtonPropsType>`
-    background-color: #ffffff;
-    border: 2px solid rgb(37, 40, 43);
+    background-color: ${theme.colors.secondaryBg};
+    border: 2px solid #25282b;
 
     &:hover {
       border: 3px solid #7cfe3b;

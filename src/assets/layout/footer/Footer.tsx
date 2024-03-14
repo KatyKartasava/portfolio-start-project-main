@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Icon } from '../../../components/icon/Icon';
 import { FlexWrapper } from '../../../components/FlexWrapper';
+import { theme } from '../../../styles/Theme';
 
 export const Footer = () => {
   return (
@@ -37,18 +38,16 @@ const StyledFooter = styled.footer`
 const SocialList = styled.ul`
   display: flex;
   gap: 24px;
-  padding: 0;
 `
 
 const SocialItem = styled.li`
-  list-style: none;
 `
 
 const SocialLink = styled.a`
   cursor: pointer;
 
   svg {
-    fill: #25282b;
+    fill: ${theme.colors.fontP};
   }
 
   &:hover svg {
