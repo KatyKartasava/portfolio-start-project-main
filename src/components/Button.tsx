@@ -9,7 +9,7 @@ type ButtonPropsType = {
 export const Button = styled.button<ButtonPropsType>`
   padding: 8px 24px;
   border-radius: 8px;
-  color: #25282b;
+  color: ${theme.colors.fontP};
   font-family: Roboto;
   font-size: 18px;
   font-weight: 500;
@@ -22,18 +22,16 @@ export const Button = styled.button<ButtonPropsType>`
     background-color: ${theme.colors.accent};
 
     &:hover {
-      background-color: #7cfe3b;
-      font-size: 20px;
+      background-color: ${theme.colors.colorHover};
     }
   `}
     
   ${props => props.secondary && css<ButtonPropsType>`
     background-color: ${theme.colors.secondaryBg};
-    border: 2px solid #25282b;
+    border-color: ${theme.colors.fontP};
 
     &:hover {
-      border: 3px solid #7cfe3b;
-      font-size: 20px;
+      background-color: ${theme.colors.colorHover};
     }
   `} 
 `

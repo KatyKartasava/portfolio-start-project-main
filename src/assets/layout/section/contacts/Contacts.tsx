@@ -6,7 +6,7 @@ import { Button } from '../../../../components/Button';
 export const Contacts = () => {
   return (
     <StyledContacts>
-      <SectionTitle>Contacts</SectionTitle>
+      <SectionTitle>Contact me</SectionTitle>
       <StyledForm>
         Name<Field />
         Email<Field />

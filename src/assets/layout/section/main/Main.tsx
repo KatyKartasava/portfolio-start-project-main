@@ -1,43 +1,44 @@
 import React from 'react';
 import styled from 'styled-components';
-import photo from '../../../images/foto.png';
+import photo1 from '../../../images/main.png';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
 import { Button } from '../../../../components/Button';
 import { theme } from '../../../../styles/Theme';
+import { Container } from '../../../../components/Container';
 
 export const Main = () => {
   return (
     <StyledMain>
-      <FlexWrapper align={"center"}>
-        <TextBlock>
-          <MainTitle>Software Developer</MainTitle>
-          <Name>Hello,  my name is Vahid Navazan</Name>
-          <Description>Short text with details about you, what you do or your professional career. You can add more information on the about page.</Description>
-          <Button primary>Projects</Button>
-          <Button secondary>LinkedIn</Button>
-        </TextBlock>
-        <Photo src={photo} alt='Foto Vahid Navazan'/>
-      </FlexWrapper>
+      <Container>
+        <FlexWrapper justify={"space-between"} align={"center"}>
+          <TextBlock>
+            <MainTitle>Software Developer</MainTitle>
+            <Name>Hello,  my name is Vahid Navazan</Name>
+            <Description>Short text with details about you, what you do or your professional career. You can add more information on the about page.</Description>
+            <Button primary>Projects</Button>
+            <Button secondary>LinkedIn</Button>
+          </TextBlock>
+          <PhotoBlock>
+            <Photo src={photo1} alt='Vahid Navazan'/>
+          </PhotoBlock>
+        </FlexWrapper>
+      </Container>
     </StyledMain>
   );
 };
 
-const StyledMain = styled.div`
+const StyledMain = styled.section`
   min-height: 100vh;
-  max-width: 1200px;
-  width: 100%;
-  overflow: hidden;
-  padding: 0 120px;
+  display: flex;
 `
 
 const TextBlock = styled.div`
-  width: 508px;
-  padding-top: 55px;
+  max-width: 508px;
+  flex: 1 0 47%;
 `
 
 const MainTitle =styled.h1`
   color: ${theme.colors.accent};
-  font-family: Nunito;
   font-size: 20px;
   line-height: 27px;
   text-align: left;
@@ -50,6 +51,7 @@ const Name = styled.h2`
   font-size: 64px;
   line-height: 120%;
   text-align: left;
+  padding-top: 12px;
 `
 
 const Description = styled.p`
@@ -57,10 +59,25 @@ const Description = styled.p`
   line-height: 36px;
   text-align: left;
   padding-right: 22px;
+  margin: 32px 0;
+`
+const PhotoBlock = styled.div`
+  min-height: 100vh;
+  flex: 1 0 47%;
+  margin: 0;
+
+  position: relative;
+  right: -8%;
+  bottom: 0;
+
+  clip-path: path('M425.75 0.66C525.01 5.37 629.41 42.26 690.01 119.05C746.05 190.06 708.4 290.88 724.4 379.11C737.27 450.04 785.3 512.96 774.4 584.2C762.33 663.13 723.84 738.45 661.53 790.18C596.27 844.36 509.83 889.89 425.75 873.67C344.26 857.94 318.87 754.82 249.24 710.63C173.06 662.28 40.25 688.78 5.43 606.91C-28.69 526.71 82.95 456.25 105.3 372.2C130.06 279.1 78.6 166.63 142.09 93.02C207.86 16.76 323.68 -4.19 425.75 0.66Z'); 
+  background-color: #FDC435;
 `
 
 const Photo = styled.img`
-  position: absolute;
-  right: 0;
-  top: 0;
+  width: 720px;
+  height: 629px;
+
+  object-fit: cover;
 `
+
