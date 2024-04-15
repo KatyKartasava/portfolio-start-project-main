@@ -28,32 +28,38 @@ const StyledProject = styled.div`
   align-items: flex-start;
   max-width: 992px;
   width: 100%;
-  margin-bottom: 80px;
   border-radius: 24px;
-  box-shadow: 0px 6px 64px 0px rgba(112, 144, 176, 0.1);
+  overflow: hidden;
+  box-shadow: 0px 6px 64px rgb(112, 144, 176 / 0.1);
+
+  
+  &:nth-child(2) img {
+    order: -2;
+    
+  }
 `
 
 const ProjectImage = styled.img`
   height: 526px;
   max-width: 496px;
   object-fit: cover;
-  border-top-right-radius: 24px;
-  border-bottom-right-radius: 24px;
-  box-shadow: 0px 6px 64px 0px rgba(112, 144, 176, 0.1);
+ 
 `
 
 const ProjectText = styled.div`
   width: 50%;
   height: 100%;
+
+  padding: 0 39px 0 50px;
+
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: center;
-  padding-left: 50px;
+
   background-color: #ffffff;
-  border-top-left-radius: 24px;
-  border-bottom-left-radius: 24px;
-  box-shadow: 0px 6px 64px 0px rgba(112, 144, 176, 0.1);
+
+  
 
   a {
     border: 1px solid #25282b;
@@ -73,5 +79,6 @@ const ProjectDescription = styled.p`
   font-size: 18px;
   font-weight: 400;
   line-height: 150%;
+  padding: 24px 0;
 `
 

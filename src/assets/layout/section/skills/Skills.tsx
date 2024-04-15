@@ -31,7 +31,5 @@ export const Skills = () => {
 };
 
 const StyledSkills = styled.section`
-  h2 {
-    padding-bottom: 74px;
-  }
+  
 `
