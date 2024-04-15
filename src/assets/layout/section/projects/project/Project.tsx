@@ -30,7 +30,7 @@ const StyledProject = styled.div`
   width: 100%;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0px 6px 64px rgb(112, 144, 176 / 0.1);
+  box-shadow: 0px 6px 64px 0px rgba(112, 144, 176, 0.1);
 
   
   &:nth-child(2) img {

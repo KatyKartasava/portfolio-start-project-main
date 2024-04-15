@@ -3,16 +3,15 @@ import styled from 'styled-components';
 import { Icon } from '../../../components/icon/Icon';
 import { FlexWrapper } from '../../../components/FlexWrapper';
 import { theme } from '../../../styles/Theme';
-import { Container } from '../../../components/Container';
+import vector from '../../images/Vector.svg';
 
 export const Footer = () => {
   return (
     <StyledFooter>
-      <Container>
-        <FlexWrapper direction={"column"} align={"center"}>
-          <SocialList>
-            <SocialItem>
-              <SocialLink>
+      <FlexWrapper direction={"column"} align={"center"}>
+        <SocialList>
+          <SocialItem>
+            <SocialLink>
                 <Icon iconId={"instagram"} width={"48"} height={"48"} viewBox={"0 0 48 48"}/>
               </SocialLink>
             </SocialItem>
@@ -24,20 +23,29 @@ export const Footer = () => {
             <SocialItem>
               <SocialLink>
                 <Icon iconId={"mail"} width={"48"} height={"48"} viewBox={"0 0 48 48"}/>
-              </SocialLink>
-            </SocialItem>
-          </SocialList>
+            </SocialLink>
+          </SocialItem>
+        </SocialList>
           <Copyright>Madelyn Torff 2021</Copyright>
-          </FlexWrapper>  
-        </Container>  
+          <FooterImg src={vector}/> 
+      </FlexWrapper>  
     </StyledFooter>
   );
 };
 
 const StyledFooter = styled.footer`
-  min-height: 400px;
-  
+  padding-top: 56px;
+  position: relative;
+
 `
+const FooterImg = styled.img`
+  position: absolute;
+  top: 30%;
+
+  z-index: -2;
+ 
+`
+
 const SocialList = styled.ul`
   display: flex;
   gap: 24px;
@@ -58,4 +66,10 @@ const SocialLink = styled.a`
   }
 `
 
-const Copyright = styled.small``
+const Copyright = styled.small`
+  color: ${theme.colors.fontText};
+  font-family: Nunito;
+  font-size: 16px;
+  font-weight: 400;
+  padding-top: 32px;
+`

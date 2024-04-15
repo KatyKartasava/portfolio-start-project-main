@@ -28,7 +28,8 @@ export const Button = styled.button<ButtonPropsType>`
     
   ${props => props.secondary && css<ButtonPropsType>`
     background-color: ${theme.colors.secondaryBg};
-    border-color: ${theme.colors.fontP};
+    border: 2px inset ${theme.colors.fontP};
+    
 
     &:hover {
       background-color: ${theme.colors.colorHover};
