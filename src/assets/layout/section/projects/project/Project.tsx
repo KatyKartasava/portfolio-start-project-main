@@ -26,6 +26,7 @@ const StyledProject = styled.div`
   flex-direction: row;
   justify-content: flex-start;
   align-items: flex-start;
+
   max-width: 992px;
   width: 100%;
   border-radius: 24px;
@@ -42,13 +43,14 @@ const StyledProject = styled.div`
 const ProjectImage = styled.img`
   height: 526px;
   max-width: 496px;
+  width: 100%;
   object-fit: cover;
  
 `
 
 const ProjectText = styled.div`
-  width: 50%;
   height: 100%;
+  width: 100%;
 
   padding: 0 39px 0 50px;
 

@@ -22,6 +22,10 @@ const StyledHeaderMenu = styled.nav`
     gap: 48px;
     text-align: end;
   }
+
+  @media ${theme.media.tablet} {
+    display: none;
+  }
 `
 const ListItem = styled.li``
 

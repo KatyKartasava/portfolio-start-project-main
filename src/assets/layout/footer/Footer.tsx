@@ -39,6 +39,7 @@ const StyledFooter = styled.footer`
 
 `
 const FooterImg = styled.img`
+width: 100%;
   position: absolute;
   top: 30%;
 
