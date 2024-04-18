@@ -1,15 +1,4 @@
 @font-face {
-  font-family: Comfortaa;
-  src:
-    local("Comfortaa") url(./assets/fonts/Comfortaa-Bold.eot?) format("eots"),
-    url(./assets/fonts/Comfortaa-Bold.woff2?) format("woff2"),
-    url(./assets/fonts/Comfortaa-Bold.woff?) format("woff"),
-    url(./assets/fonts/Comfortaa-Bold.ttf?) format("truetype");
-  font-weight: 700;
-  font-style: normal;
-}
-
-@font-face {
   font-family: Nunito;
   src:
     local("Nunito") url(./assets/fonts/Nunito-Bold.eot?) format("eots"),

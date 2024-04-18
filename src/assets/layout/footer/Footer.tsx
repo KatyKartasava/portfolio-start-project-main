@@ -26,27 +26,24 @@ export const Footer = () => {
             </SocialLink>
           </SocialItem>
         </SocialList>
-          <Copyright>Madelyn Torff 2021</Copyright>
-          <FooterImg src={vector}/> 
+        <Copyright>Madelyn Torff 2021</Copyright>
       </FlexWrapper>  
     </StyledFooter>
   );
 };
 
 const StyledFooter = styled.footer`
-  padding-top: 56px;
-  position: relative;
+  padding: 56px 0 240px;
 
+  background-image: url(${vector});
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media ${theme.media.mobile} {
+    padding: 56px 0 177px;
+  }
 `
-const FooterImg = styled.img`
-width: 100%;
-  position: absolute;
-  top: 30%;
-
-  z-index: -2;
- 
-`
-
 const SocialList = styled.ul`
   display: flex;
   gap: 24px;
@@ -57,20 +54,25 @@ const SocialItem = styled.li`
 
 const SocialLink = styled.a`
   cursor: pointer;
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   svg {
     fill: ${theme.colors.fontP};
   }
 
   &:hover svg {
-    fill: #7cfe3b;
+    fill: ${theme.colors.colorHover};
   }
 `
 
 const Copyright = styled.small`
   color: ${theme.colors.fontText};
-  font-family: Nunito;
   font-size: 16px;
-  font-weight: 400;
+  line-height: 22px;
   padding-top: 32px;
 `

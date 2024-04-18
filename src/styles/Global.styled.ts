@@ -12,7 +12,7 @@ export const GlobalStyled = createGlobalStyle`
 
 body {
   margin: 0;
-  font-family: "Nunito", "Raleway", "Comfortaa" -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+  font-family: "Nunito", "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
     "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -23,6 +23,8 @@ body {
   letter-spacing: 0%;
   font-family: Nunito;
   font-weight: 400;
+
+  min-width: 375px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -30,8 +32,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-p {
-  
+section {
+  padding-top: 144px;
+
+  @media ${theme.media.mobile} {
+    padding-top: 80px;
+  }
 }
 
 a {

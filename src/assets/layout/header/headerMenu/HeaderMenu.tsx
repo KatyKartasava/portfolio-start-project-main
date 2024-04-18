@@ -9,7 +9,7 @@ export const HeaderMenu = (props: {menuItems: Array<string>}) => {
         {props.menuItems.map((item: string, index: number) => {
           return <ListItem key={index}>
             <Link href="#">{item}</Link>
-        </ListItem>
+          </ListItem>
         })}
       </ul>
     </StyledHeaderMenu>
@@ -20,7 +20,7 @@ const StyledHeaderMenu = styled.nav`
   ul {
     display: flex;
     gap: 48px;
-    text-align: end;
+    justify-content: end;
   }
 
   @media ${theme.media.tablet} {

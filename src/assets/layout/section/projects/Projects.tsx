@@ -13,7 +13,7 @@ export const Projects = () => {
     <StyledProjects>
       <Container>
         <SectionTitle>Projects</SectionTitle>
-        <FlexWrapper justify={"center"} wrap={"wrap"} gap={"80px"}>
+        <FlexWrapper justify={"center"} wrap={"wrap"}>
           <Project title={"Project Name"}
                   description={"I created this personal project in order to show how to create an interface in Figma using a portfolio as an example."}
                   src={Img1} ></Project>

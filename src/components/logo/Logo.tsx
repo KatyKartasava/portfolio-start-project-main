@@ -1,46 +1,36 @@
 import React from 'react';
 import styled from 'styled-components';
 import { theme } from '../../styles/Theme';
+import logoPage from '../../assets/images/Madelyn Torff.svg';
 
 export const Logo = () => {
   return (
-    <StyledLogo>
-      <LinkLogo href="#">Vahid Navazan</LinkLogo>
-    </StyledLogo>  
+    <LogoLink href="#">
+      <img src={logoPage} alt='' />
+    </LogoLink> 
   );
 };
 
-const StyledLogo = styled.div`
-  padding: 12px 0; 
-  position: relative;
-`
 
-const LinkLogo = styled.a`
-  color: ${theme.colors.fontP};
-  font-family: Comfortaa;
-  font-size: 18px;
-  font-weight: 700;
-  line-height: 180%;
-  text-align: left;
 
-  &::after {
-    width: 90%;
-    height: 4px;
-    border-radius: 2px;
-    background: ${theme.colors.accent};
-    display: block;
-    margin: 0 auto;
-    content: "";
-    transform: scale(0);
-  }
+const LogoLink = styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  img {
+    width: 142px;
+    height: 32px;
+   }
   
 
-
-  &:hover {
-   color: ${theme.colors.colorHover};
-
-   &::after {
-    transform: scale(1);
-   }
+  svg {
+    fill: ${theme.colors.fontP};
   }
+
+  &:hover svg {
+    fill: ${theme.colors.accent};
+    filter: drop-shadow(2px 0px 0px ${theme.colors.fontP});
+  }
+
 `
