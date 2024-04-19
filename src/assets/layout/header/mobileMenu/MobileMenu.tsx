@@ -25,10 +25,9 @@ const StyledMobileMenu = styled.nav`
   display: none;
 
   @media ${theme.media.tablet} {
-    display: block;
+    display: flex;
   }
 `
-
 const MobileMenuPopup = styled.div<{isOpen: boolean}>`
   position: fixed;
   top: 0;
@@ -55,6 +54,7 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     text-align: end;
   }
 `
+
 const BurgerButton = styled.button<{isOpen: boolean}>`
   position: fixed;
   right: 15px;
@@ -90,7 +90,7 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
       transform: translateY(-4px);
 
       ${props => props.isOpen && css<{isOpen: boolean}>`
-        transform: rotate(45deg) translateY(0);
+        transform: rotate(-45deg) translateY(0);
       `} 
     }
 
@@ -105,7 +105,7 @@ const BurgerButton = styled.button<{isOpen: boolean}>`
       transform: translateY(4px);
 
       ${props => props.isOpen && css<{isOpen: boolean}>`
-        transform: rotate(-45deg) translateY(0);
+        transform: rotate(45deg) translateY(0);
       `} 
     }
   }
@@ -122,7 +122,7 @@ const Link = styled.a`
 
   &::after {
     width: 90%;
-    height: 4px;
+    height: 2px;
     border-radius: 2px;
     background: ${theme.colors.colorHover};
     display: block;

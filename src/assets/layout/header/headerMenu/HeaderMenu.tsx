@@ -20,7 +20,7 @@ const StyledHeaderMenu = styled.nav`
   ul {
     display: flex;
     gap: 48px;
-    justify-content: end;
+    justify-content: center;
   }
 
   @media ${theme.media.tablet} {
@@ -38,7 +38,7 @@ const Link = styled.a`
 
   &::after {
     width: 90%;
-    height: 4px;
+    height: 2px;
     border-radius: 2px;
     background: ${theme.colors.colorHover};
     display: block;
