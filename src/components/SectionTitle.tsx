@@ -8,7 +8,7 @@ export const SectionTitle = styled.h2`
   line-height: 72px;
   text-align: center;
 
-  margin-bottom: 80px;
+  margin-bottom: 95px;
 
   position: relative;
 
@@ -22,11 +22,11 @@ export const SectionTitle = styled.h2`
 
     position: absolute;
     left: 50%;
-    bottom: -4px;
+    bottom: -8px;
     transform: translateX(-50%);
   }
 
   @media ${theme.media.mobile} {
-    margin-bottom: 50px;
+    margin-bottom: 60px;
   }
 `

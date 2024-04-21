@@ -22,7 +22,13 @@ export const Contacts = () => {
 };
 
 const StyledContacts = styled.section`
-  
+  h2 {
+    margin-left: 40px;
+
+    @media ${theme.media.mobile} {
+      margin-left: 0;
+    }
+  }
 `
 
 const StyledForm = styled.form`
@@ -50,6 +56,10 @@ const StyledForm = styled.form`
     resize: none;
     height: 160px;
   }
+
+  @media ${theme.media.mobile} {
+      gap: 20px;
+    }
 `
 
 const Field = styled.input`
@@ -57,8 +67,8 @@ const Field = styled.input`
   background-color: #ffffff;
   border: 1px solid #E8ECF4;
   border-radius: 8px;
-  padding: 8px 12px;
-  margin-top: 8px;
+  padding: 9px 12px;
+  margin-top: 10px;
 
   &:focus-visible {
     outline: 1px solid #E8ECF4;

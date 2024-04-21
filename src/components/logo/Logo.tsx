@@ -14,23 +14,23 @@ export const Logo = () => {
 
 
 const LogoLink = styled.a`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
   img {
-    width: 142px;
-    height: 32px;
-   }
+    padding: 4px 0;
+  }
+  &::after {
+    width: 90%;
+    height: 2px;
+    border-radius: 2px;
+    background: ${theme.colors.colorHover};
+    display: block;
+    margin: 0 auto;
+    content: "";
+    transform: scale(0);
+  }
   
-
-  svg {
-    fill: ${theme.colors.fontP};
+  &:hover {
+   &::after {
+    transform: scale(1);
+   }
   }
-
-  &:hover svg {
-    fill: ${theme.colors.accent};
-    filter: drop-shadow(2px 0px 0px ${theme.colors.fontP});
-  }
-
 `

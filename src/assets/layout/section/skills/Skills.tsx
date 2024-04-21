@@ -5,13 +5,14 @@ import { Icon } from "../../../../components/icon/Icon";
 import { SectionTitle } from "../../../../components/SectionTitle";
 import { Skill } from "./skill/Skill";
 import { Container } from "../../../../components/Container";
+import { theme } from "../../../../styles/Theme";
 
 export const Skills = () => {
   return (
     <StyledSkills>
       <Container>
         <SectionTitle>Skills</SectionTitle>
-        <FlexWrapper wrap={"wrap"} justify={"space-between"} align={"flex-start"} gap={"73px"}>
+        <FlexWrapper wrap={"wrap"} justify={"space-between"} align={"flex-start"} gap={"87px"}>
           <Skill iconId={"vscode"} width={"112"} height={"112"} viewBox={"0 0 112 112"}/>
           <Skill iconId={"js"} width={"120"} height={"120"} viewBox={"0 0 120 120"}/>
           <Skill iconId={"css"} width={"120"} height={"119"} viewBox={"0 0 120 119"}/>
@@ -30,5 +31,11 @@ export const Skills = () => {
   );
 };
 
-const StyledSkills = styled.section``
+const StyledSkills = styled.section`
+  @media ${theme.media.tablet} {
+    div {
+      gap: 45px;
+  }
+  }
+`
 

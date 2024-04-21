@@ -40,7 +40,6 @@ const GridWrapper = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "text photo";
-  margin-top: 56px;
 
   @media ${theme.media.tablet} {
     grid-template-columns: 1fr;
@@ -58,6 +57,10 @@ const TextBlock = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @media ${theme.media.tablet} {
+    margin-top: 16px;
+  }
 `
 
 const MainTitle =styled.h1`
@@ -82,6 +85,10 @@ const Description = styled.p`
   text-align: left;
   padding-right: 22px;
   margin: 32px 0;
+
+  @media ${theme.media.tablet} {
+    padding-right: 0;
+  }
 `
 
 const ButtonBlock = styled.div`
@@ -97,7 +104,7 @@ const Photo = styled.img`
   object-fit: cover;
   max-width: 720px;
   min-height: 629px;
-  object-position: 0px -56px;
+  object-position: 0px 0px;
   width: 100%;
   
   overflow: visible;
@@ -108,8 +115,8 @@ const Photo = styled.img`
 
   @media ${theme.media.mobile} {
     max-width: 486px;
-    min-height: 394px;
-    
+    min-height: 415px;
+    object-position: -15px 0px;
   }
 ` 
 
