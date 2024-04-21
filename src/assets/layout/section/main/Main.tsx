@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import photo1 from '../../../images/image.png';
+import photo1 from '../../../images/main-image-desctop.webp';
+import photo2 from '../../../images/main-image-mobile.webp';
 import { FlexWrapper } from '../../../../components/FlexWrapper';
 import { Button } from '../../../../components/Button';
 import { theme } from '../../../../styles/Theme';
@@ -11,18 +12,20 @@ export const Main = () => {
   return (
     <StyledMain>
       <Container>
-        <FlexWrapper justify={"space-between"} align={"center"} wrap={"wrap"}>
-            <TextBlock>
-              <MainTitle>Software Developer</MainTitle>
-              <Name>Hello,  my name is Vahid Navazan</Name>
-              <Description>Short text with details about you, what you do or your professional career. You can add more information on the about page.</Description>
-              <Button primary>Projects</Button>
-              <Button secondary>LinkedIn</Button>
-            </TextBlock>
-            
-              <Photo src={photo1} alt='Vahid Navazan'/>
-            
-        </FlexWrapper>
+        <GridWrapper>
+          <TextBlock>
+            <MainTitle>Software Developer</MainTitle>
+            <Name>Hello,  my name is Vahid Navazan</Name>
+            <Description>Short text with details about you, what you do or your professional career. You can add more information on the about page.</Description>
+            <ButtonBlock>
+              <Button primary as="a" href="#projects">Projects</Button>
+              <Button secondary as="a">LinkedIn</Button>
+            </ButtonBlock>
+          </TextBlock>
+          <PhotoBlock>
+            <Photo src={photo1} alt='Vahid Navazan'/>
+          </PhotoBlock>    
+        </GridWrapper>
       </Container>
     </StyledMain>
   );
@@ -32,27 +35,29 @@ const StyledMain = styled.section`
   min-height: 100vh;
   display: flex;
 `
-// const MainBlock = styled.div`
-//   display: flex;
+const GridWrapper = styled.div`
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "text photo";
+  margin-top: 56px;
 
-//   width: 100%;
-
-//   @media ${theme.media.tablet} {
-//     display: flex;
-//     flex-direction: column-reverse;
-//     justify-content: center;
-//     align-items: center;
-//   }
-// `
+  @media ${theme.media.tablet} {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "photo"
+                          "text";
+  }
+`
 
 const TextBlock = styled.div`
   max-width: 508px;
-  width: 50%;
+  width: 100%;
+  grid-area: text;
 
-  @media ${theme.media.tablet} {
-    width: 100%;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const MainTitle =styled.h1`
@@ -78,33 +83,33 @@ const Description = styled.p`
   padding-right: 22px;
   margin: 32px 0;
 `
-// const PhotoBlock = styled.div`
-//   width: 50%;
-//   position: relative;
-//   top: 0;
-//   bottom: 0;
-//   right: 0;
-  
-//   @media ${theme.media.tablet} {
-//     width: 100%;
-//   }
-// `
+
+const ButtonBlock = styled.div`
+  display: flex;
+`
+
+const PhotoBlock = styled.div`
+  grid-area: photo;
+  z-index: -1;
+`
 
 const Photo = styled.img`
-  max-width: 720px;
-  width: 100%;
-  min-height: 629px;
   object-fit: cover;
-  object-position: 10% 0px;
+  max-width: 720px;
+  min-height: 629px;
+  object-position: 0px -56px;
+  width: 100%;
+  
   overflow: visible;
 
   @media ${theme.media.tablet} {
-    max-width: 486px;
-    width: 100%;
-    min-height: 394px;
-    object-position: 0% 0%;
-    order: -1;
-    margin-bottom: 50px;
+    object-position: -15px -56px;
   }
-`
+
+  @media ${theme.media.mobile} {
+    max-width: 486px;
+    min-height: 394px;
+    
+  }
+` 
 

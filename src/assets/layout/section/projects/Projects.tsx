@@ -10,7 +10,7 @@ import { Container } from "../../../../components/Container";
 
 export const Projects = () => {
   return (
-    <StyledProjects>
+    <StyledProjects id="projects">
       <Container>
         <SectionTitle>Projects</SectionTitle>
         <FlexWrapper justify={"center"} wrap={"wrap"}>
