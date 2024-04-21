@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { theme } from '../../../../styles/Theme';
 
 export const MobileMenu = (props: {menuItems: Array<string>}) => {
+  const [menuIsOpen, setmenuIsOpen] = useState(false)
+  const onBurgerBtnClick = () => { setmenuIsOpen(!menuIsOpen)}
   return (
     <StyledMobileMenu>
-      <BurgerButton isOpen={false}>
+      <BurgerButton isOpen={menuIsOpen} onClick={ onBurgerBtnClick}>
         <span></span>
       </BurgerButton>
-      <MobileMenuPopup isOpen={false}>
+      <MobileMenuPopup isOpen={menuIsOpen} onClick={ () => {setmenuIsOpen(false)}}>
         <ul>
           {props.menuItems.map((item: string, index: number) => {
             return <ListItem key={index}>
@@ -36,23 +38,29 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
   bottom: 0;
   z-index: 999;
   background-color: ${theme.colors.accent};
-
-  display: none;
-
-  ${props => props.isOpen && css<{isOpen: boolean}>`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  `}
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(-100%);
+  transition: 1s ease-in-out;
 
   ul {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 48px;
+    gap: 18px;
     text-align: end;
+    transition: 1s ease-in-out;
   }
+
+  ${props => props.isOpen && css<{isOpen: boolean}>`
+    transform: translateY(0);
+
+    & ul {
+      gap: 48px;
+    }
+  `}
 `
 
 const BurgerButton = styled.button<{isOpen: boolean}>`

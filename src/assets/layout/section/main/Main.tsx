@@ -7,6 +7,8 @@ import { Button } from '../../../../components/Button';
 import { theme } from '../../../../styles/Theme';
 import { Container } from '../../../../components/Container';
 import { font } from '../../../../styles/Common';
+import Tilt from 'react-parallax-tilt';
+import Typewriter from 'typewriter-effect';
 
 export const Main = () => {
   return (
@@ -14,7 +16,17 @@ export const Main = () => {
       <Container>
         <GridWrapper>
           <TextBlock>
-            <MainTitle>Software Developer</MainTitle>
+            <MainTitle>
+              <p>Software Developer</p>
+              <Typewriter
+                options={{
+                strings: ['Software Developer'],
+                autoStart: true,
+                loop: true,
+                delay: 150
+                }}
+              />
+            </MainTitle>
             <Name>Hello,  my name is Vahid Navazan</Name>
             <Description>Short text with details about you, what you do or your professional career. You can add more information on the about page.</Description>
             <ButtonBlock>
@@ -22,9 +34,11 @@ export const Main = () => {
               <Button secondary as="a">LinkedIn</Button>
             </ButtonBlock>
           </TextBlock>
-          <PhotoBlock>
-            <Photo src={photo1} alt='Vahid Navazan'/>
-          </PhotoBlock>    
+          <Tilt>
+            <PhotoBlock>
+              <Photo src={photo1} alt='Vahid Navazan'/>
+            </PhotoBlock>
+          </Tilt>    
         </GridWrapper>
       </Container>
     </StyledMain>
@@ -69,6 +83,10 @@ const MainTitle =styled.h1`
   line-height: 27px;
   text-align: left;
   text-transform: uppercase;
+
+  p {
+    display: none;
+  }
 `
 
 const Name = styled.h2`

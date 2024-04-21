@@ -26,6 +26,7 @@ const LogoLink = styled.a`
     margin: 0 auto;
     content: "";
     transform: scale(0);
+    transition: ${theme.animations.transition};
   }
   
   &:hover {

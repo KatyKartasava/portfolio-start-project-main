@@ -45,10 +45,12 @@ const Link = styled.a`
     margin: 0 auto;
     content: "";
     transform: scale(0);
+    transition: ${theme.animations.transition};
   }
   
   &:hover {
    color: ${theme.colors.colorHover};
+   transition: ${theme.animations.transition};
    
    &::after {
     transform: scale(1);

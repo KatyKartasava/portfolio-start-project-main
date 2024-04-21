@@ -17,12 +17,14 @@ export const Button = styled.button<ButtonPropsType>`
   margin-right: 12px;
   border: none;
   cursor: pointer;
+  transition: ${theme.animations.transition};
 
   ${props => props.primary && css<ButtonPropsType>`
     background-color: ${theme.colors.accent};
 
     &:hover {
       background-color: ${theme.colors.colorHover};
+      transform: translateY(5px);
     }
   `}
     
@@ -33,6 +35,7 @@ export const Button = styled.button<ButtonPropsType>`
 
     &:hover {
       background-color: ${theme.colors.colorHover};
+      transform: translateY(5px);
     }
   `} 
 `
